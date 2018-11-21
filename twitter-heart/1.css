@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+}
+.btn-love{
+    display: inline-block;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    background-image: url("web_heart_animation_edge.png");
+}
+input:checked + label{
+    transition: background-position 0.6s steps(28);
+    background-position: right 0;
+}
+
+/*div:hover:after{*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*top: 100px;*/
+    /*margin: 0 auto;*/
+    /*background: url("web_heart_animation_edge.png");*/
+    /*background-size: 2900%;*/
+    /*height: 100px;*/
+    /*width: 100px;*/
+    /*animation: heart steps(28) .8s 1 both;*/
+/*}*/
+  /*@keyframes heart {*/
+             /*0%{*/
+                 /*background-position: left;*/
+             /*}*/
+             /*100%{*/
+                 /*background-position: right;*/
+             /*}*/
+  /*}*/
+/*桃心出来了*/
+

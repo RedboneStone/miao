@@ -1,0 +1,16 @@
+html,body{
+      margin: 0;
+      padding: 0;
+  }
+label{
+    display: inline-block;
+    background-image: url("button.png");
+    /*background-image: url("images/button.png");*/
+    width: 260px;
+    height: 97px;
+    background-position: 0 96px;
+    transition: background-position 0.1s steps(1) ;
+}
+input:checked + label{
+    background-position: 0 0;
+}
