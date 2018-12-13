@@ -1,0 +1,113 @@
+button{
+    margin: 50px auto;
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #ff3d2e;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+
+}
+button:hover{
+    background-color: #e01909;
+}
+[data-balloon]
+{position: relative;}
+[data-balloon]:before{
+    content: attr(data-balloon);
+    position: absolute;
+    background-color: black;
+    border-radius: 3px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    transition: .5s ;
+    opacity: 0;
+}
+[data-balloon]:after{
+    content: '';
+    border: 4px solid transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    transition: .5s;
+    opacity: 0;
+}
+/*////  before伪元素的居中 /////////////////////// /////////////////*/
+[data-balloon-pos="top"]:before,[data-balloon-pos="bottom"]:before,
+[data-balloon-pos="top"]:after,[data-balloon-pos="bottom"]:after{
+    left: 50%;
+    transform: translateX(-50%);
+}
+[data-balloon-pos="left"]:before,[data-balloon-pos="right"]:before,
+[data-balloon-pos="left"]:after,[data-balloon-pos="right"]:after{
+    top: 50%;
+    transform: translateY(-50%);
+}
+[data-balloon-pos="top"]:before{
+    bottom: 100%;
+}
+[data-balloon-pos="bottom"]:before{
+    top: 100%;
+}
+[data-balloon-pos="left"]:before{
+    right: 100%;
+}
+[data-balloon-pos="right"]:before{
+    left: 100%;
+}
+/*//////  尖尖的定位     ///////////////////////////////////////////////////*/
+/*[data-balloon-pos="top"]:after,[data-balloon-pos="bottom"]:after{*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+/*}*/
+/*[data-balloon-pos="left"]:after,[data-balloon-pos="right"]:after{*/
+    /*top: 50%;*/
+    /*transform: translateY(-50%);*/
+/*}*/         /*可以复用  和前面相同元素合并*/
+[data-balloon-pos="top"]:after{
+    top: 0;
+    border-top-color: black;
+}
+[data-balloon-pos="bottom"]:after{
+    bottom: 0;
+    border-bottom-color: black;
+}
+[data-balloon-pos="left"]:after{
+    left: 0;
+    border-left-color: black;
+}
+[data-balloon-pos="right"]:after{
+    right: 0;
+    border-right-color: black;
+}
+/*//////大小               ////////////////////////////////////////*/
+[data-balloon-size="small"]:before{
+    width: 50px;
+}
+[data-balloon-size="medium"]:before{
+    width: 100px;
+}
+[data-balloon-size="large"]:before{
+     width: 150px;
+ }
+[data-balloon-size="fit"]:before{
+      width: 100%;
+}
+/*//////////////////////////////////////////////////////*/
+[data-balloon-pos="top"]:hover:before,[data-balloon-pos="top"]:hover:after{
+    transform: translateX(-50%) translateY(-10px);
+}
+[data-balloon-pos="bottom"]:hover:before,[data-balloon-pos="bottom"]:hover:after{
+    transform: translateX(-50%) translateY(10px);
+}
+[data-balloon-pos="left"]:hover:before,[data-balloon-pos="left"]:hover:after{
+    transform: translateY(-50%) translateX(-10px);
+}
+[data-balloon-pos="right"]:hover:before,[data-balloon-pos="right"]:hover:after{
+    transform: translateY(-50%) translateX(10px);
+}
+[data-balloon]:hover:before,[data-balloon]:hover:after{
+    opacity: 1;
+}
