@@ -42,43 +42,45 @@
     console.log(x);
     console.log(y);
 </script>
-<script id="ch0103/01" type="3-01">
+
+<div class="ch0103">
+    <script id="ch0103/01" type="3-01">
     var a = +prompt("输入a");
     var b = +prompt("输入b");
     console.log(a+b);
 </script>
-<script id="ch0103/02" type="3-02">
+    <script id="ch0103/02" type="3-02">
     var a = +prompt("输入a");
     var b = +prompt("输入b");
     var c = +prompt("输入c");
     console.log((a+b)*c);
 </script>
-<script id="ch0103/03" type="3-03">
+    <script id="ch0103/03" type="3-03">
 	var a = +prompt("输入a");
 	var b = +prompt("输入b");
 	var c = +prompt("输入c");
 	console.log((a+b)/c);
 </script>
-<script id="ch0103/04" type="3-04">
+    <script id="ch0103/04" type="3-04">
     var x = +prompt("输入被除数");
 	var y = +prompt("输入除数");
 	var a = parseInt(x/y);
 	console.log(a);
 	console.log(x%y);
 </script>
-<script id="ch0103/05" type="3-05">
+    <script id="ch0103/05" type="3-05">
 	var a = +prompt("输入整数a");
 	var b = +prompt("输入整数b");
 	var x = (a/b).toFixed(9);
 	console.log(x);
 </script>
-<script id="ch0103/06" type="3-06">
+    <script id="ch0103/06" type="3-06">
 	var a = +prompt("输入确诊数");
 	var b = +prompt("输入死亡数");
 	var x = ((b/a)*100).toFixed(3);
 	console.log(x + "%");
 </script>
-<script id="ch0103/07" type="3-07">
+    <script id="ch0103/07" type="3-07">
     var a = +prompt("输入a");
     var b = +prompt("输入b");
     var c = +prompt("输入c");
@@ -87,12 +89,12 @@
     var fx = (a*x*x*x + b*x*x + c*x + d).toFixed(7);
     console.log(fx);
 </script>
-<script id="ch0103/08" type="3-08">
+    <script id="ch0103/08" type="3-08">
     var f = +prompt("输入华氏温度");
     var c = (5*(f-32)/9).toFixed(5);
     console.log(c);
 </script>
-<script id="ch0103/09" type="3-09">
+    <script id="ch0103/09" type="3-09">
     var r = +prompt("输入半径");
     var a = (2*r).toFixed(4);
     var b = (2*r*Math.PI).toFixed(4);
@@ -101,36 +103,106 @@
     console.log(b);
     console.log(c);
 </script>
-<script id="ch0103/10" type="3-10">
+    <script id="ch0103/10" type="3-10">
     var r1 = +prompt("第一个阻抗");
     var r2 = +prompt("第二个阻抗");
     var  r = (1/(1/r1+1/r2)).toFixed(2);
     console.log(r);
 </script>
-<script id="ch0103/11" type="3-11">
+    <script id="ch0103/11" type="3-11">
    	var a = +prompt("输入a");
 	var b = +prompt("输入b");
 	var x = (a%b).toFixed(4);
 	console.log(x);
 </script>
-<script id="ch0103/12" type="3-12"></script>
-<script id="ch0103/13" >
-    var n = +prompt("输入一个三位数");
-    var h = parseInt(n/100).toString();
-    var t = (parseInt(n/10)%10).toString();
-    var a = (n%10).toString();
-    console.log(a+t+h);
-</script>
-<script id="ch0103/14" type="3-14">
+    <script id="ch0103/12" type="3-12"></script>
+    <script id="ch0103/13" type="3-13">
+			var n = +prompt("输入一个三位数");
+			var h = parseInt(n/100).toString();
+			var t = (parseInt(n/10)%10).toString();
+			var a = (n%10).toString();
+			console.log(a+t+h);
+    </script>
+    <script id="ch0103/14" type="3-14">
 
-</script>
-<script id="ch0103/15" type="3-15"></script>
-<script id="ch0103/16" type="3-16"></script>
-<script id="ch0103/17" type="3-17">
+    </script>
+    <script id="ch0103/15" type="3-15"></script>
+    <script id="ch0103/16" type="3-16"></script>
+    <script id="ch0103/17" type="3-17">
     向量求面积
 </script>
-<script id="ch0103/18" type="3-18"></script>
-<script id="ch0103/19" type="3-19"></script>
-<script id="ch0103/20" type="3-20"></script>
+    <script id="ch0103/18" type="3-18"></script>
+    <script id="ch0103/19" type="3-19"></script>
+    <script id="ch0103/20" type="3-20"></script></div>
+<div class="ch0104">
+    <script id="ch0104/01" type="4-01">
+        var N = +prompt("输入一个整数");
+        if(N == 0)
+        	console.log("zero");
+        else
+        	console.log(N<0? "negative" : "positive");
+    </script>
+    <script id="ch0104/02" type="4-02">
+        var a = +prompt("输入一个浮点数");
+        console.log(a<0? (0-a).toFixed(2) : a.toFixed(2));
+    </script>
+    <script id="ch0104/03" type="4-03">
+        var N = +prompt("输入一个正整数");
+        console.log( N%2==0? "even" : "odd");
+    </script>
+    <script id="ch0104/04" type="4-04">
+        var a = prompt("输入一个字符");
+        var N = a.charCodeAt();
+        console.log( N%2==0? "NO" : "YES");
+    </script>
+    <script id="ch0104/05" type="4-05">
+        var x = +prompt("第一个整数");
+        var y = +prompt("第二个整数");
+        if (x == y)
+        	console.log("=");
+        else
+        	console.log(x-y>0?">":"<");
+    </script>
+    <script id="ch0104/06" type="4-06">
+        var N = +prompt("输入一个正整数");
+        console.log(N>=10&&N<=99? 1:0);
+    </script>
+    <script id="ch0104/07" type="4-07">
+        var a = +prompt("幸运瓶盖");
+        var b = +prompt("鼓励瓶盖");
+        console.log(a>=10 || b>= 20?1:0);
+    </script>
+    <script id="ch0104/08" type="4-08">
+        var n = +prompt("输入一个数");
+        console.log(n%3==0&&n%5==0? "YES":"NO");
+    </script>
+    <script id="ch0104/09" type="4-09">
+        var n = +prompt("输入一个数");
+        var z ="";
+        if (n%3==0)
+        	z+="3 ";
+        if (n%5==0)
+        	z+="5 ";
+        if (n%7==0)
+        	z+="7";
+        console.log(z||"n");
+    </script>
+    <script id="ch0104/10">
+        var a = +prompt("输入语文成绩");
+        var b = +prompt("输入数学成绩");
+        console.log(a<60||b<60?1:0);
+    </script>
+    <script id="ch0104/11" type="4-11"></script>
+    <script id="ch0104/12" type="4-12"></script>
+    <script id="ch0104/13" type="4-13"></script>
+    <script id="ch0104/14" type="4-14"></script>
+    <script id="ch0104/15" type="4-15"></script>
+    <script id="ch0104/16" type="4-16"></script>
+    <script id="ch0104/17" type="4-17"></script>
+    <script id="ch0104/18" type="4-18"></script>
+    <script id="ch0104/19" type="4-19"></script>
+    <script id="ch0104/20" type="4-20"></script>
+    <script id="ch0104/21" type="4-21"></script>
+</div>
 </body>
 </html>
