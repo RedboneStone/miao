@@ -95,7 +95,7 @@
     var c = (5*(f-32)/9).toFixed(5);
     console.log(c);
 </script>
-<script id="ch0103/09" >
+<script id="ch0103/09" type="3-09">
     var  r = +prompt("输入半径");
     var pi = 3.14159;
     var  a = (2*r).toFixed(4);
@@ -196,16 +196,132 @@
         var b = +prompt("输入数学成绩");
         console.log(a<60||b<60?1:0);
     </script>
-    <script id="ch0104/11" type="4-11"></script>
-    <script id="ch0104/12" type="4-12"></script>
-    <script id="ch0104/13" type="4-13"></script>
-    <script id="ch0104/14" type="4-14"></script>
-    <script id="ch0104/15" type="4-15"></script>
-    <script id="ch0104/16" type="4-16"></script>
-    <script id="ch0104/17" type="4-17"></script>
-    <script id="ch0104/18" type="4-18"></script>
-    <script id="ch0104/19" type="4-19"></script>
-    <script id="ch0104/20" type="4-20"></script>
+    <script id="ch0104/11" type="4-11">
+        var x = +prompt("输入1-7之间的数字");
+        console.log(x==1||x==3||x==5? "NO":"YES");
+    </script>
+    <script id="ch0104/12" type="4-12">
+        var x = +prompt("请输入距离");
+        function boo(x) {
+	        if(x/3.0+ 27 + 23 > x/1.2)
+		        return "Walk";
+	        else if (x/3.0+ 27 + 23 == x/1.2)
+		        return "All";
+	        else
+		        return "Bike";
+        }
+        console.log(boo(x));
+    </script>
+    <script id="ch0104/13" type="4-13">
+        var N = +prompt("输入一个浮点数");
+        var y = 0;
+        if(0<=N< 5){
+	        y=-N+2.5;
+        } else if(5 <= N < 10){
+	        y=2-1.5*(N-3)(N-3);
+        } else if(10 <= N < 20){
+	        y=N/2-1.5;
+        }
+        console.log(y.toFixed(3));
+    </script>
+    <script id="ch0104/14" type="4-14">
+        var x = +prompt("输入货品重量");
+        var y =  prompt("是否加急");
+        if (x<=1000) {
+        	var p = 8;
+        } else if (x>1000){
+        	p = 8 + Math.ceil((x -1000)/500)*4;
+        }
+        if (y = "y"){
+        	p = p + 5;
+        }
+        console.log(p);
+    </script>
+    <script id="ch0104/15" type="4-15">
+        //排序算法
+        var a= +prompt("输入a");
+        var b= +prompt("输入b");
+        var c= +prompt("输入c");
+        if (a >= b){
+        	if (a >= c){
+        		console.log(a);
+            }
+                console.log(c);
+        } else if(b > c){
+        	    console.log(b);
+        }
+          else
+        	 	console.log(c);
+
+    </script>
+    <script id="ch0104/16" type="4-16">
+	    var a= +prompt("输入a");
+	    var b= +prompt("输入b");
+	    var c= +prompt("输入c");
+	    if (a+b>c&&a+c>b&&b+c>a)
+	    	console.log("yes");
+	    else
+	    	console.log("no");
+
+    </script>
+    <script id="ch0104/17" type="4-17">
+        var x= +prompt("输入一个整数");
+        function year(x){
+	        if(x%400==0 || x%4==0 && x%100!=0)// 运算符优先级（从前到后依次递增): || && 比较运算符（>、==） 运算符
+		        return "Y";
+	        else
+		        return "N";
+        }
+        console.log(year(x));
+
+    </script>
+    <script id="ch0104/18" type="4-18">
+        var x = +prompt("x坐标");
+        var y = +prompt("y坐标");
+        if (-1<=x<=1&&-1<=y<=1){
+        	console.log("yes");
+        } else
+            console.log("no");
+    </script>
+    <script id="ch0104/19" type="4-19">
+        var a = +prompt("输入整数a");
+        var b = +prompt("输入整数b");
+        var c = prompt("输入计算符");
+        if(c==="+"){
+            console.log(a+b);
+        }else
+        if(c==="-") {
+            console.log(a-b);
+        }else
+        if(c==="*"){
+            console.log(a*b);
+        }else
+        if(c==="/"){
+        	if (b===0) {
+        		console.log("Divided by zero!");
+            }
+           console.log(a/b);
+        }else
+        	console.log("Invalid operator!");
+
+    </script>
+    <script id="ch0104/20">
+	    var a = +prompt("输入a");
+	    var b = +prompt("输入b");
+	    var c = +prompt("输入c");
+	    var d = b*b-4*a*c;
+	    if(d===0){
+            console.log("x1=x2="+(-b/2*a).toFixed(5));
+        }
+        if(d>0){
+            console.log("x1="+ +"x2"+);
+        }
+        if (d<0){
+
+        }
+
+
+    </script>
     <script id="ch0104/21" type="4-21"></script>
 </div>
 </body>
