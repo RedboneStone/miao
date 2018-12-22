@@ -305,24 +305,255 @@
         	console.log("Invalid operator!");
 
     </script>
-    <script id="ch0104/20">
+    <script id="ch0104/20" type="">
 	    var a = +prompt("输入a");
 	    var b = +prompt("输入b");
 	    var c = +prompt("输入c");
-	    var d = b*b-4*a*c;
-	    if(d===0){
+	    var delta = b*b-4*a*c;
+	    if(delta===0){
             console.log("x1=x2="+(-b/2*a).toFixed(5));
-        }
-        if(d>0){
-            console.log("x1="+ +"x2"+);
-        }
-        if (d<0){
-
+        }else if  (delta>0) {
+        	var x1 = (-b + Math.sqrt(delta))/2*a;
+        	var x2 = (-b - Math.sqrt(delta))/2*a;
+            console.log("x1="+x1.toFixed(5));
+            console.log("x2="+x2.toFixed(5));
+        } else {
+	    	delta = -delta;
+	    	var sqrt_d = Math.sqrt(delta);
+            var x1img = sqrt_d / 2*a;
+            var x1real = -b/2*a;
+            var x2real = -b/2*a;
+            var x2img = -sqrt_d / 2*a;
+             if(x1img === 1 && x2img === -1){
+             	x1img = "i";
+             	x2img = "-i"
+             } else if (x1img === -1 && x2img === 1){
+             	x1img = "-i";
+             	x2img = "i"
+             } else {
+             	x1img = x1img.toFixed(5) + "i";
+             	x2img = x2img.toFixed(5) + "i";
+             }
+             x1real= x1real===0 ? x1real : x1real.toFixed(5);
+             x2real= x2real===0 ? x2real : x2real.toFixed(5);
+             x1real = x1real >= 0? "+" + x1real : "" + x1real;
+             x2real = x2real >= 0? "+" + x2real : "" + x2real;
+             console.log('x1=' + x1img + x1real);
+             console.log('x2=' + x2img + x2real);
         }
 
 
     </script>
-    <script id="ch0104/21" type="4-21"></script>
+    <script id="ch0104/21" type="4-21">
+
+    </script>
+</div>
+<div class="ch0105">
+    <script id="ch0105/01" type="5-01">
+        var n = +prompt("输入人数");
+        var total = 0;
+        for (var i = 1;i <= n; i++){
+            var x = +prompt("输入学生"+i+"年龄");
+            total = total + x;
+        }
+        console.log((total/n).toFixed(2));
+    </script>
+    <script id="ch0105/02" type="5-02">
+        for (var i = 0;i<12;i++){
+        	var x = (+prompt("输入每月结余")).toFixed(2);
+        	var y = 0;
+        	 y = y + x;
+        }
+        console.log("$"+(y/12).toFixed(2));
+    </script>
+    <script id="ch0105/03" type="5-03"></script>
+    <script id="ch0105/04" type="5-04"></script>
+    <script id="ch0105/05" type="5-05"></script>
+    <script id="ch0105/06" type="5-06"></script>
+    <script id="ch0105/07" type="5-07"></script>
+    <script id="ch0105/08" type="5-08"></script>
+    <script id="ch0105/09" type="5-09"></script>
+    <script id="ch0105/10" type="5-10"></script>
+    <script id="ch0105/11" type="5-11">
+        var k = +prompt("输入数的个数");
+        var countOne = 0;
+        var countFive = 0;
+        var countTen = 0;
+        var countV = [];
+        function count (a,b) {
+            if(a===b) {
+        		countV.push(b);
+            }
+        }
+        for (i=0;i<k;i++){
+        	var V = +prompt("输入具体数值");
+        	count(V,1);
+        	count(V,5);
+        	count(V,10);
+        	count(V,6);
+        }
+        for (j in countV){
+        	if (countV[j] == 1) countOne++;
+            if (countV[j] == 5) countFive++;
+            if (countV[j] == 10) countTen++;
+        }
+        console.log(countOne);
+        console.log(countFive);
+        console.log(countTen);
+
+    </script>
+    <script id="ch0105/12" type="5-12"></script>
+    <script id="ch0105/13" type="5-13"></script>
+    <script id="ch0105/14" type="5-14"></script>
+    <script id="ch0105/15" type="5-15"></script>
+    <script id="ch0105/16" type="5-16"></script>
+    <script id="ch0105/17" type="5-17"></script>
+    <script id="ch0105/18" type="5-18"></script>
+    <script id="ch0105/19" type="5-19"></script>
+    <script id="ch0105/20" type="5-20"></script>
+    <script id="ch0105/21" type="5-21"></script>
+    <script id="ch0105/22" type="5-22"></script>
+    <script id="ch0105/23" type="5-23"></script>
+    <script id="ch0105/24" type="5-24"></script>
+    <script id="ch0105/25" type="5-25"></script>
+    <script id="ch0105/26" type="5-26"></script>
+    <script id="ch0105/27" type="5-27"></script>
+    <script id="ch0105/28" type="5-28"></script>
+    <script id="ch0105/29" type="5-29"></script>
+    <script id="ch0105/30" type="5-30"></script>
+    <script id="ch0105/31" type="5-31"></script>
+    <script id="ch0105/32" type="5-32"></script>
+    <script id="ch0105/33" type="5-33"></script>
+    <script id="ch0105/34" type="5-34"></script>
+    <script id="ch0105/35" type="5-35"></script>
+    <script id="ch0105/36" type="5-36"></script>
+    <script id="ch0105/37" type="5-37"></script>
+    <script id="ch0105/38" type="5-38"></script>
+    <script id="ch0105/39" type="5-39"></script>
+    <script id="ch0105/40" type="5-40"></script>
+    <script id="ch0105/41" type="5-41"></script>
+    <script id="ch0105/42" type="5-42"></script>
+    <script id="ch0105/43" type="5-43"></script>
+    <script id="ch0105/44" type="5-44"></script>
+    <script id="ch0105/45" type="5-45"></script>
+    </div>
+<div class="extral">
+    <script id="sort" type="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
+         var arr = [];
+         for (var i=0;i<3;i++) {
+         	arr[i]= +prompt("输入一个数");
+         	if (i>0){
+         	if(arr[i]<arr[i-1]){
+         		tmp = arr[i];
+         		arr[i] = arr[i-1];
+         		arr[i-1] = tmp
+            }//TODO:还有其他的替代方案,这是一种最笨的;
+         	}
+         }
+        console.log(arr[0],arr[1],arr[2]);
+    </script>
+
+    题目：水仙花数。水仙花数是指一个N位的十进制数，其各位数的N次方的和等于它自己。
+    如：153 =　1的三次方+5的三次方+3的三次方，则153就是一个水仙花数
+    或：1634 =　1的四次方+6的四次方+3的四次方+4的四次方
+    因为1634是一个四位数。
+    找出100到100000以内所有的水仙花数。
+    <script id="narcissistic" type="narcissistic" sample-input="153" sample-output="YES" comment="判断一个数是否为水仙花数">
+            var x = +prompt("输入一个数判断是否为水仙花");
+            var str = x.toString();
+            var total = 0;
+            for (var i=0,len=str.length;i<len;i++) {
+                var a = Number(str.charAt(i));
+                var z = Math.pow(a,len);// 类似x的y次方 如何不用Math方法实现.
+                total = total + z;
+            }
+            if(total === x) {
+	            console.log("YES");
+            } else  {
+            	console.log("NO");
+            }
+
+    </script>
+    <script id="narcissistics" type="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
+            for(i= 100;i<=10000;i++){
+            	var str = i.toString();
+            	var total = 0;
+            	for (var j=0,len=str.length;j<len;j++) {
+			            var a = Number(str.charAt(j));
+			            var z = Math.pow(a,len);
+			            total = total + z;
+                }
+                if (total === i) {
+                	console.log(i);
+                }
+            }
+
+    </script>
+    <script id="palindrom" type="palindrom" sample-input="12321" sample-output="YES" comment="判断一个非负整数是否为回文数字">
+            var x = prompt("输入一个非负整数");
+            var arr = [];
+            for(var i = 0,len = x.length;i<len;i++){
+            	var a = x.charAt(i);
+            	arr.push(a);
+            }
+            for (var j=0;j<len;j++) {
+	            if (arr[j] !== arr[len - j - 1]) {
+		            console.log("NO");
+		            break;
+	            }
+	            if(j===len-1){console.log("YES");}
+            }
+
+
+    </script>
+
+    <script id="weekday" type="weekday" sample-input="2018 6" sample-output="5" comment="输入年份与月份，给出该年该月的第一天是星期几">
+           var x = +prompt("输入年份");
+           var y = +prompt("输入月份");
+
+
+    </script>
+    <script id="complete-number" type="complete-number" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数">
+
+    </script>
+    <script id="complete-numbers" type="complete-numbers" sample-input="" sample-output="" comment="输出10000以内所有的完全数">
+
+    </script>
+    <script id="prime" type="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
+
+    </script>
+    <script id="primes" type="primes" sample-input="" sample-output="" comment="输出100以内所有的素数">
+
+    </script>
+    <script id="itob" type="itob" sample-input="123" sample-output="123" comment="数字转换成字符串，即实现Number函数的功能，不可使用+号或者Number函数">
+
+    </script>
+    <script id="lcf&lcm" type="lcf&lcm"  sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
+
+    </script>
+
+    题目：敲7。输出1到100以内所有7的倍数以及数字中包含7的数，如7（7的倍数），37（不是倍数但数位中包含7）都需要输出，依次类推
+    <script id="7" type="7" sample-input="" sample-output="" comment="敲7，输出7的倍数或数位中含有7的数如（21，27）">
+
+    </script>
+    <script id="sqrt" type="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
+
+    </script>
+
+    给定M和N，求从M个物体中选出N个的排列与组合的数量：
+    Ｃ（ｍ，ｎ）
+    Ａ（ｍ，ｎ）
+    <script id="c&a" type="c&a">
+
+    </script>
+
+    题目：给定一个数，对其进行四舍五入，如1.4输出1，1.6输出2
+    <script id="round" type="round">
+            var x =  +prompt("输入一个数");
+            console.log(x - parseInt(x)>= 0.5? parseInt(x) + 1 : parseInt(x));
+            //parseInt 只返回整数部分
+    </script>
+
 </div>
 </body>
 </html>
