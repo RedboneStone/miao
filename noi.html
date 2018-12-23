@@ -305,7 +305,7 @@
         	console.log("Invalid operator!");
 
     </script>
-    <script id="ch0104/20" type="">
+    <script id="ch0104/20" type="4-20">
 	    var a = +prompt("输入a");
 	    var b = +prompt("输入b");
 	    var c = +prompt("输入c");
@@ -358,15 +358,17 @@
         }
         console.log((total/n).toFixed(2));
     </script>
-    <script id="ch0105/02" type="5-02">
+    <script id="ch0105/02" type="">
+        var y = 0;
         for (var i = 0;i<12;i++){
-        	var x = (+prompt("输入每月结余")).toFixed(2);
-        	var y = 0;
-        	 y = y + x;
+        	var x = (+prompt("输入"+(i+1)+"月结余")).toFixed(2);
+            y = y + x;
         }
         console.log("$"+(y/12).toFixed(2));
     </script>
-    <script id="ch0105/03" type="5-03"></script>
+    <script id="ch0105/03" type="5-03">
+
+    </script>
     <script id="ch0105/04" type="5-04"></script>
     <script id="ch0105/05" type="5-05"></script>
     <script id="ch0105/06" type="5-06"></script>
