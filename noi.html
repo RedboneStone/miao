@@ -502,20 +502,174 @@
         console.log(countTen);
 
     </script>
-    <script id="ch0105/12" type="5-12"></script>
-    <script id="ch0105/13" type="5-13"></script>
-    <script id="ch0105/14" type="5-14"></script>
-    <script id="ch0105/15" type="5-15"></script>
-    <script id="ch0105/16" type="5-16"></script>
-    <script id="ch0105/17" type="5-17"></script>
-    <script id="ch0105/18" type="5-18"></script>
-    <script id="ch0105/19" type="5-19"></script>
-    <script id="ch0105/20" type="5-20"></script>
-    <script id="ch0105/21" type="5-21"></script>
-    <script id="ch0105/22" type="5-22"></script>
-    <script id="ch0105/23" type="5-23"></script>
-    <script id="ch0105/24" type="5-24"></script>
-    <script id="ch0105/25" type="5-25"></script>
+    <script id="ch0105/12" type="5-12">
+        var N = +prompt("输入整数数列的长度");
+        var m = +prompt("输入指定数字");
+        var count = 0;
+        for (var i = 0;i<N;i++){
+        	var n = +prompt("输入第"+(i+1)+"个值");
+        	if (n===m)
+        		count++;
+        }
+        console.log(count);
+    </script>
+    <script id="ch0105/13" type="5-13">
+        var a = +prompt("输入底数");
+        var n = +prompt("输入幂数");
+        var z = 1;
+        for (var i = 0;i<n;i++){
+           z = z * a;
+        }
+        console.log(z);
+    </script>
+    <script id="ch0105/14" type="5-14">
+        var x = +prompt("输入人口基数(亿)");
+        var n = +prompt("输入年数");
+        for(var i = 0;i<n;i++){
+            x = x * (1+1/1000);
+        }
+        console.log(x.toFixed(4));
+    </script>
+    <script id="ch0105/15" type="5-17">
+        var R = +prompt("复合年利率");
+        var M = +prompt("资本");
+        var Y = +prompt("年数");
+        for(var i = 0;i<Y;i++){
+        	M = M * (1 + R/100);
+        }
+        console.log(parseInt(M));
+    </script>
+    <script id="ch0105/16" type="5-16">
+        var N = +prompt("输入年薪");
+        var K = +prompt("输入房子增增长率");
+        var z = 200;
+        debugger
+        for (var i = 1;i<=20;i++){
+            if((N*i)>= z) {
+              console.log(i);
+              break
+            }
+            z = z*(1.0+K/100);
+        }
+        if((N*i)<z){
+            console.log("Impossible");
+        }
+    </script>
+    <script id="ch0105/17" type="5-17">
+        var k = +prompt("输入正整数K");
+        function Fib(n){
+        	return n<2? 1 : (Fib(n-1)+Fib(n-2));
+        }
+        console.log(Fib(k-1));
+    </script>
+    <script id="ch0105/18" type="5-18">
+        var x = +prompt("输入病例组数");
+        var y1 = +prompt("输入鸡尾酒疗法总病例数");
+        var y2 = +prompt("输入鸡尾酒疗法有效数据");
+        for(var i = 0;i<x-1;i++){
+        	var z1 = +prompt("输入第"+(i+1)+"组临床实验的总病例数");
+        	var z2 = +prompt("输入第"+(i+1)+"组改进疗法有效数据");
+        	if(z2/z1 - y2/y1 >= 5/100){
+        		console.log("better");
+        	}
+            else if(y2/y1 - z2-z1 >= 5/100) {
+            	console.log("worse");
+            }
+            else{
+            	console.log("same");
+            }
+        }
+
+    </script>
+    <script id="ch0105/19" type="5-19">
+        var z = +prompt("屋顶的个数");
+        var T = 0;
+        for (var i= 0; i<z ; i++) {
+	        var x = +prompt("x坐标");
+	        var y = +prompt("y坐标");
+	        var n = +prompt("人数");
+	        var t = 1.5*n + Math.sqrt(x*x+y*y)/25;//救援船来回 加上上下船的时间
+	        T = T + t;
+        }
+        console.log(Math.ceil(T));
+    </script>
+    <script id="ch0105/20" type="5-20">
+        let h = +prompt("输入球的初始高度");
+        let s = h;
+        for (var i = 0;i < 10;i++){
+        	if (i === 9){
+			        console.log(s);
+			        console.log(h/Math.pow(2,i+1));
+            }
+            s = s + h/Math.pow(2,i);
+
+        }
+
+    </script>
+    <script id="ch0105/21" type="5-21">
+        let N = +prompt("输入一个正整数");
+        while (N !== 1) {
+	        if (N % 2 === 1) {
+		        var tmp = N * 3 + 1;
+		        console.log(N+"*3+1=" + tmp);
+		        N = tmp;
+	        }
+	        if(N%2===0){
+	        	var tmp1 = N/2;
+	        	console.log(N+"/2="+ tmp1);
+	        	N = tmp1;
+            }
+        }
+        console.log("End");
+    </script>
+    <script id="ch0105/22" type="5-22">
+        let free_Money = 0;
+        let mom_Money = 0;
+        let error_code = "";
+        let count = 0;
+        for (let i = 0; i<12; i++){
+        	var budget = +prompt("第"+(i+1)+"个月预算");
+
+        	if(budget <= (300 + free_Money)) {
+        		free_Money = free_Money + (300 - budget);
+        		while(free_Money>=100){
+        			free_Money-=100;
+        			mom_Money+=100;
+                }
+
+            } else if(budget > (300 + free_Money)){
+        		count++;
+        		if (count = 1) {
+                  error_code = "-" + (i+1);
+                }
+            }
+         }
+         if (error_code!=0){
+	            console.log(error_code);
+         }else {
+	            var interest = mom_Money*1.2 + free_Money ;
+                console.log(interest);
+         }
+    </script>
+    <script id="ch0105/23" type="">
+        let m = +prompt("药品总数");
+        let n = +prompt("取药的人数");
+        let count = 0;
+        for (let i = 0;i < n;i++) {
+            let num_medi = +prompt("第"+(i+1)+"个人需要的药品");
+            if(num_medi<=m){
+            	m = m - num_medi;
+            	count = count + 1;
+            }
+        }
+        console.log(n-count);
+    </script>
+    <script id="ch0105/24" type="5-24">
+
+    </script>
+    <script id="ch0105/25" type="5-25">
+
+    </script>
     <script id="ch0105/26" type="5-26"></script>
     <script id="ch0105/27" type="5-27"></script>
     <script id="ch0105/28" type="5-28"></script>
