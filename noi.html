@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -651,7 +652,7 @@
                 console.log(interest);
          }
     </script>
-    <script id="ch0105/23" type="">
+    <script id="ch0105/23" type="5-23">
         let m = +prompt("药品总数");
         let n = +prompt("取药的人数");
         let count = 0;
@@ -665,16 +666,108 @@
         console.log(n-count);
     </script>
     <script id="ch0105/24" type="5-24">
-
+        let n = +prompt("监测血压次数");
+        let normal1 = 0;
+        let output = 0;
+          for(let i = 0;i < n;i++){
+            let x = +prompt("收缩压");
+            let y = +prompt("舒张压");
+            if (90<=x&&x<=140&&60<=y&&y<=90){
+            	normal1 = normal1 + 1;
+            	if (normal1 > output)
+            	output = normal1;
+            }else
+	            normal1 = 0;
+        }
+        console.log(output);
     </script>
-    <script id="ch0105/25" type="5-25">
+    <script id="ch0105/25" type="5-23">
+      for(let i = 81;i <= 342;i++){
+      	  let n = i;
+      	  B70 = n%7;
+          B71 = (n - B70)/ 7 % 7;
+          B72 = ((n - B71*7 - B70)/7/7)%7;
+	      B90 = n%9;
+	      B91 = (n - B90)/ 9 % 9;
+	      B92 = ((n - B91*7 - B90)/9/9)%9;
+         if(B70 == B92&&B71==B91&&B72 ==B90){
+            console.log(i);
+            console.log(""+B70+B71+B72);
+            console.log(""+B90+B91+B92);
+         }
 
+      }
     </script>
-    <script id="ch0105/26" type="5-26"></script>
-    <script id="ch0105/27" type="5-27"></script>
-    <script id="ch0105/28" type="5-28"></script>
-    <script id="ch0105/29" type="5-29"></script>
-    <script id="ch0105/30" type="5-30"></script>
+    <script id="ch0105/26" type="5-26">
+        let n = +prompt("输入四位数的个数");
+        let count = 0;
+        for(let i = 0;i < n;i++){
+            let a = +prompt(`第 ${i+1} 个值`);
+
+            let a1 = a%10;
+            let a2 = (a - a1)/10%10;
+            let a3 = (a - a2*10 - a1)/100%10;
+            let a4 = (a - a3*100 - a2*10 - a1)/1000%10;
+            if (a1 - a4 - a3 - a2 >0) {
+            	count++;
+            }
+        }
+        console.log(count);
+    </script>
+    <script id="ch0105/27" type="5-27">
+        let K = +prompt("输入整数K");
+        let Sn = 0;
+        function f(n) {
+          let i = n
+          Sn = Sn + 1/n;
+          if(Sn > K){
+            	return i;
+          }
+          else {
+	          return f(n + 1);
+          }
+        }// 递归 实现
+        console.log(f(1));
+    </script>
+    <script id="ch0105/28" type="5-28">
+	    let n = prompt("输入一个整数");
+	    let count = [];
+	    for(let i = 0,len = n.length;i < len;i++){
+            let a = +n.charAt(i);
+	    	count.push(a);
+	    }
+	    count.reverse();
+	    for(let i = 0,len = n.length;i < len;i++){
+	        console.log(count[i]);
+	    }
+    </script>
+    <script id="ch0105/29" type="5-29">
+	    let n = prompt("输入一个整数");
+	    let N = Number(n);
+	    let count = [];
+	    function rev() {
+                for(let i = 0,len = str.length;i < len;i++){
+				    let a = +str.charAt(i);
+				    count.push(a);
+			    }
+			    count.reverse();
+			    if(count[0] == 0){ count.shift();}
+		    }
+	    if (N> 0){
+	    	    str = n
+                rev();
+                console.log(count.join(""));
+        } else if (N < 0){
+	    	    str = n.replace(/-/,"");
+			    rev();
+			    console.log("-"+ count.join(""));
+        } else{
+            console.log(0);
+        }
+    </script>
+    <script id="ch0105/30" type="">
+        
+    </script>
     <script id="ch0105/31" type="5-31"></script>
     <script id="ch0105/32" type="5-32"></script>
     <script id="ch0105/33" type="5-33"></script>
@@ -683,7 +776,25 @@
     <script id="ch0105/36" type="5-36"></script>
     <script id="ch0105/37" type="5-37"></script>
     <script id="ch0105/38" type="5-38"></script>
-    <script id="ch0105/39" type="5-39"></script>
+    <script id="ch0105/39" type="5-39">
+        let n = +prompt("输入数字");
+        let sqrt_plus = 0;
+        function string$7(len){
+          for(let j = 0; j < len.length ;j++) {
+	          if(len.charAt(j)=="7")
+              	return true;
+          }
+          return false;
+        }
+        for(let i = 0;i < n;i++){
+        	let len = i.toString(10);
+            if (i%7==0||string$7(len)){
+                    continue;
+                } else{
+	               sqrt_plus = sqrt_plus + i*i;
+	            }
+        }
+    </script>
     <script id="ch0105/40" type="5-40"></script>
     <script id="ch0105/41" type="5-41"></script>
     <script id="ch0105/42" type="5-42"></script>
