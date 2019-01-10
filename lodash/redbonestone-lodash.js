@@ -3,7 +3,7 @@ var redbonestone = (function() {
 	function chunk(ary, size = 1) {
 		let result = [];
 		for(let i = 0; i < ary.length;i+=size) {
-			f(i+size > ary.length){
+			if(i+size > ary.length){
 				result.push(ary.slice(i,ary.length));
 				break;
 			}
