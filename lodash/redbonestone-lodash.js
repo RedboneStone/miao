@@ -31,7 +31,7 @@ var redbonestone = (function() {
 	}
 	function compact(arr) {
 		var result = [];
-		for(let i = 0;i < n;i++){
+		for(let i = 0;i < arr.length;i++){
 			if(arr[i]){
 				result.push(arr[i]);
 			}
@@ -88,12 +88,14 @@ var redbonestone = (function() {
 				result.push(arr[i]);
 			}
 		}
+		return result;
 	}
 	function map(arr,test){
 		let result = [];
 		for(let i = 0;i < arr.length;i++){
-			 result.push(test(arr[i],idx,arr));
+			 result.push(test(arr[i],index,arr));
 		}
+		return result;
 	}
 	return {
 		chunk: chunk,
