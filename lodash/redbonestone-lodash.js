@@ -12,19 +12,7 @@ var redbonestone = (function() {
 		return result
 	}
 	function uniq(ary) {
-		let tmp = {};
-		let result = [];
-		for(let i = 0;i<ary.length;i++){
-			if(ary[i] in tmp){
-				tmp[ary[i]]++
-			} else {
-				tmp[ary[i]] = 1
-			}
-		}
-		for(var item of tmp){
-				result.push(item);
-		}
-		return result;
+		return ary.filter((element,index,ary)=> ary.indexOf(element) === index);
 	}
 	function uniqby(){
 
@@ -69,8 +57,13 @@ var redbonestone = (function() {
 	function flattendepth() {
 
 	}
-	function some() {
-
+	function some(ary,func) {
+			for(let i = 0;i<ary.length;i++){
+				if(!func(ary[i])){
+					return false
+				}
+			}
+			return true
 	}
 	function every() {
 
@@ -82,20 +75,49 @@ var redbonestone = (function() {
 
 	}
 	function filter(arr,test) {
-		let result = [];
-		for(let i = 0;i < arr.length;i++){
-			if(test(arr[i])) {
-				result.push(arr[i]);
-			}
-		}
-		return result;
+
+		// for(let i = 0;i < arr.length;i++){
+		// 	if(test(arr[i])) {
+		// 		result.push(arr[i]);
+		// 	}
+		// }
+		// return result;
+
+			let result = [];
+			return arr.reduce((returnValue, currentValue) => {
+				if(test(currentValue)){
+					result.push(currentValue);
+				}
+				return result;//返回结果放if外头,否则会出bug
+			},0);
 	}
 	function map(arr,test){
+		// let result = [];
+		// for(let i = 0;i < arr.length;i++){
+		// 	 result.push(test(arr[i],index,arr));
+		// }
+		// return result;
 		let result = [];
-		for(let i = 0;i < arr.length;i++){
-			 result.push(test(arr[i],index,arr));
+		return arr.reduce((returnValue,num) => {
+			result.push(test(num));
+			return result
+		},0);
+	}//根据所传函数 将数组映射到另一个数组上
+	function reduce(ary,func,initialVal) {
+		let result = initialVal;
+		for(let i = 0;i<ary.length;i++){
+			 result = func(result,ary[i]);
 		}
 		return result;
+	}//根据整个数组 计算出 一个值.
+	function ary() {
+		
+	}
+	function unary(){
+
+	}
+	function flip(){
+		
 	}
 	return {
 		chunk: chunk,
@@ -115,6 +137,12 @@ var redbonestone = (function() {
 		every:every,
 		groupby:groupby,
 		mapvalues:mapvalues,
+		reduce : reduce,
+		ary:ary,
+		unary:unary,
+		flip:flip,
+
+
 
 	};
 })();
