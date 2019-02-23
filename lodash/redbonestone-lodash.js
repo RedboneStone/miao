@@ -26,8 +26,17 @@ var redbonestone = (function() {
 		}
 		return result;
 	}
-	function difference(){
-
+	function difference(ary,...values){
+		let result = [];
+		for(let i = 0;i<ary.length;i++) {
+			for (let j = 0; j < values.length; j++) {
+				if (ary[i] !== arguments[1][j]) {
+					result.push(i);
+					break;
+				}
+			}
+		}
+		return result.map(it => ary[it]);
 	}
 	function differenceby(){
 
@@ -119,6 +128,16 @@ var redbonestone = (function() {
 	function flip(){
 		
 	}
+	function slice(ary,start = 0,end = ary.length) {
+		let result = [];
+		for(let i = start;i < end;i++){
+				result.push(ary[i]);
+			}
+		return result;	
+	}// ary 是 类数组对象即可
+	function trim(str = " ",char = whitespace) {
+		return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+	}
 	return {
 		chunk: chunk,
 		compact: compact,
@@ -129,6 +148,7 @@ var redbonestone = (function() {
 		uniqby:uniqby,
 		keys:keys,
 		map:map,
+		slice:slice,
 		filter:filter,
 		flatten:flatten,
 		flattendeep:flattendeep,
@@ -141,6 +161,8 @@ var redbonestone = (function() {
 		ary:ary,
 		unary:unary,
 		flip:flip,
+		trim:trim,
+
 
 
 
