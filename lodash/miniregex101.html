@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>miniregex101</title>
+    <style>
+        #matchResult .match:nth-of-type(odd){
+            background-color: lightblue;
+            margin-left: 1px;
+            margin-right: 1px;
+        }
+        #matchResult .match:nth-of-type(even){
+            background-color: pink;
+            margin-left: 1px;
+            margin-right: 1px;
+        }
+        .match:empty{
+            border-left: 1px dotted chartreuse  ;
+
+        }
+    </style>
+</head>
+<body>
+RedExp:<br><input onkeyup="update()" type="text" id="regsource">
+<br>String:<br/><textarea onkeyup="update()" name="" id="StringInput" cols="30" rows="10"></textarea>
+<br>Result:<br/><div id="matchResult"></div>
+<br>Substitute:<br/><input type="text" id="substitute">
+<br>Result:<br/><textarea name="" id="substituteResult" cols="30" rows="10"></textarea>
+</body>
+<script>
+    function update() {
+      var regs = regsource.value; // 分别捕获 RegExp 和  String 输入框的内容
+      var string = StringInput.value;
+      console.log(regs,string);
+      var match;
+      try{
+	      var re = new RegExp(regs,"g");
+      } catch(e){
+          if(e instanceof SyntaxError){
+	          matchResult.innerHTML = e.message;
+          	return 0;
+          } else {
+          	throw e;
+          }
+      }
+
+
+      var result = '';
+      var lastIndex = 0;//记录每次匹配完成的lastIndex
+      while(match = re.exec(string)){
+      	result+=string.slice(lastIndex,match.index);
+      	result+= `<span class="match">${match[0]}</span>`;
+        lastIndex = re.lastIndex;
+        if (match[0] == ''){
+        	re.lastIndex++;
+        }//匹配零宽断言 和  re为空的时候  需要我们手动更新lastIndex的值
+      }
+        result+=string.slice(lastIndex);
+        matchResult.innerHTML = result;// 将 result的结果 输出到 html 页面内
+    }
+</script>
+</html>
